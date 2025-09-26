@@ -44,12 +44,13 @@ Your server code will need to do the following:
    * Look up how images are specified in HTML to figure out the syntax.
    * You may want to use a wide variety of tools to help with both identifying the reference as well as the URL.
    * It may be helpful to create a temporary directory for staging and downloading content.
-* All images should be downloaded to a local directory that follows the structures of `logs\SiteID\date-time` where the `logs` directory was specified as a startup argument, the date is the date in the syntax of `YYYY-MM-DD` with Y=year, M-month, D=day with zero padding being included.  The time field is `HH:MM:SS` where H=Hour, M=Minute, and S=Seconds, also zero padded.  The SiteID is drawn from the initial request and should be set by the client.
+* All images should be downloaded to a local directory that follows the structures of `logs\SiteID\date-time` where the `logs` directory was specified as a startup argument, the date is the date in the syntax of `YYYY-MM-DD` with Y=year, M-month, D=day with zero padding being included.  The time field is `HH-mm-SS` where H=Hour, m=Minute, and S=Seconds, also zero padded.  The SiteID is drawn from the initial request and should be set by the client.
    * You may assume for Part 1 that the SiteID is set correctly by the client.
    * You may assume that the minimum gap between any requests is spaced by at least one second.
    * It is up to you how best to capture the time and when would be appropriate to do so.
    * You may also presume that all images will be uniquely named.
    * The site ID sub-directory may exist.  If not, you should create it.
+   * The date-time format will end up being `YYYY-MM-DD-HH-mm-SS` altogether.
 * The returned result code can be one of three results:
    * 200 YES SiteID date-time - This means that there was content found with the advertising string and that images were logged. The SiteID is listed as well as the date-time string (this should match with the directory that was created).
    * 200 NO - This means that there was no content found with the advertising string.  No images should be logged.
@@ -66,11 +67,13 @@ As noted above, you have a fair amount of latitude with respect to how the "guts
 * Create a sub-directory named `cp1` in your repository.
 * Create a `README.md` file inside of `cp1` containing instructions on how to run your code as well as identifying the contributions from each member of the group.   There should be at least one `Makefile` to compile your C or C++ code.
    * Note that each member of the group should have at least one substantial commit.
-* Push your code to Github and submit the full hash of your submission via Canvas.
+* Push your code to Github and submit the full hash of your submission via Canvas. Note that only one member needs to submit the hash.
 
 ## Rubric
 
-To be added
+25 points in total in the Coding Project 1 category
+
+[Rubric](./rubric1.md)
 
 ## Looking Ahead
 
