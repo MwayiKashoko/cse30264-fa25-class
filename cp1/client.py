@@ -3,6 +3,7 @@
 #
 # Syntax:
 #  python3 client.py URL AdID SiteID -port 41000 -server 127.0.0.1 -tries 5 -gap 1
+#  python3 client.py http://ns-mn1.cse.nd.edu/cse30264/ads/file1.html IRISH_CSE S1 --port 54150 --server 127.0.0.1 --tries 1 --gap 1
 #
 # URL is required and is the URL to check
 # AdID is the string to look for (must be contiguous)
@@ -18,6 +19,11 @@ import argparse
 import os
 import time
 import socket
+#The GOAT library 🙄
+import re
+import requests
+import datetime
+from pathlib import Path
 
 parsedArgs = argparse.ArgumentParser(description='Python client for confirming ad states')
 parsedArgs.add_argument('URL', type=str, help='The URL to access', default='none')
@@ -38,6 +44,8 @@ beginTime = time.time()
 numTests = 0
 numTestsSuccess = 0
 numTestsDetected = 0
+
+logsDir = "NOTSET"
 
 if(args.verbose):
    print('Iterating over ' + str(args.tries) + ' query / queries to the server')
@@ -84,9 +92,14 @@ for theTry in range(args.tries):
 
 
          if(args.verbose):
-            print('. Waiting for up to 1024 bytes')
+            print('. Waiting for up to 8192 bytes')
 
-         data = s.recv(1024)
+         data = b""
+         while True:
+            chunk = s.recv(4096)
+            if not chunk:
+               break
+            data += chunk
 
          # Note the completion time
          responseTime = time.time()
@@ -96,7 +109,42 @@ for theTry in range(args.tries):
          if (args.showTime):
             print('Receive a response in ' + str(elapsedTime) + ' s')
 
-         print(' Msg Received: ' + str(data.decode()))
+         response = str(data.decode())
+
+         #Just for getting the dir to save to
+         if response.startswith("LOGDIR123123321321"):
+            logsDir = response.split(' ', 1)[1].split('\n')[0].strip()
+
+         if logsDir != "NOTSET":
+            #last line of response should have the status of the request
+            status = response.strip().split("\n")[-1]
+
+            if "YES" in status:
+               #kinda ugly regex but works to find all image urls
+               images = [re.search(r'src="(.+?)"', elem, flags=0).group(0)[5:-1] for elem in re.findall(r'<img.+>', response)]
+
+               d = datetime.datetime.now()
+
+               currDate = f"{d:%Y-%m-%d-%H-%M-%S}"
+
+               currDir = f"{logsDir}/{args.SiteID}/{currDate}"
+
+               os.makedirs(currDir, exist_ok=True)
+
+               for imgURL in images:
+                  img_data = requests.get(imgURL).content
+                  imgName = imgURL.split("/")[-1]
+
+                  filename = f"{currDir}/{imgName}"
+
+                  with open(filename, "wb") as handler:
+                     handler.write(img_data)
+
+               #should be 200 yes
+               print(status, args.SiteID, currDate)
+            else:
+               #should be 200 no
+               print(status)
 
          # Wait (if needed) between scan requests
          if theTry + 1 <= args.tries:
@@ -109,6 +157,7 @@ for theTry in range(args.tries):
       print(f"Socket error: {e}")
       print('Requested Host: ' + str(args.server))
       print('Requested Port: ' + str(args.port))
+      pass
 
 # Note the overall time and summarize the success / failures
 # TBA
