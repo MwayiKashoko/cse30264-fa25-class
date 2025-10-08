@@ -94,4 +94,4 @@ Document in your `README.md` the specific feature, who implemented / built the f
 
 ## Rubric
 
-To be added later in the week
+[Rubric](./rubric2.md)
