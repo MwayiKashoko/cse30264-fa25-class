@@ -1,4 +1,4 @@
-# Coding Project 1
+# Coding Project 1 - Part 1
 
 ## General Overview
 
