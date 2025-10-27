@@ -1,8 +1,8 @@
 # Homework 3 - Fall 2025
 
-In this homework, we will be taking a look at the Cap-HW1-Small.pcap file that we examined in Homework 1, looking at it with a fresh set of eyes now after the content on the Data Plane and also examining the file programmatically using Python.  You can find this file via Canvas.
+In this homework, we will be taking a look at the [Cap-HW1-Small.pcap](https://canvas.nd.edu/courses/125546/files/folder/Assignments/HW01?preview=5346797) file that we examined in Homework 1, looking at it with a fresh set of eyes now after the content on the Data Plane and also examining the file programmatically using Python.  You can find this file via [Canvas](https://canvas.nd.edu/courses/125546/files/folder/Assignments/HW01?preview=5346797).
 
-Homework 3 is to be done individually.
+Homework 3 is to be done individually and is due on Sunday, just before midnight.
 
 ## Analysis - Wireshark (10 pts)
 
