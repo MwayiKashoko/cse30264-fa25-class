@@ -1,5 +1,7 @@
 # Coding Project 2 - Part 1
 
+Google Drive Link: See Canvas
+
 ## General Overview
 
 With Coding Project 1, we gained a healthy amount of experience programming with C / C++ as well as Python, examining TCP and UDP socket programming.  In this project, we are will eschew the "hard" parts of socket programming and instead go to a more traditional approach, namely that of a REST-like API by leveraging Python on the Flask on the back end and then capturing / analyzing the performance using Wireshark.  Part 1 will focus on the data capture elements while Part 2 will focus on the analytics of the data that you will capture.
@@ -30,7 +32,7 @@ Unlike a normal Python script, there are some subtle nuances to Flask.  You will
 
 For our REST server, we are going to do three things: (1) Serve up JSON; (2) Be able to apply a filter via parameters; (3) Compute a transformed result and provide it as a JSON
 
-* Your code should have two variables that are well defined and accessible:
+* Your code should have two variables that are well defined and accessible (think top of the file):
    * The port number to use
    * A list that contains the specific data file or files that should be considered when serving data
       * You may presume that the file location is relative to where your script is located (e.g. `data/set1/data-all.json`)
@@ -66,7 +68,7 @@ For the data endpoint, use the `data-all.json` file without any filtering.  For 
 
 Using the filter tools for Wireshark, create pcap that contains only the connections to and from your Flask server (e.g. filter for a specific TCP port and IP address). You can do that either by setting the filter prior to your capture or after your capture.
 
-Place the captures in the `capture` sub-directory in your `cp2` repository.  Name the files `good.pcap` and `poor.pcap` to help identify the captures.  Make sure to save your results of your testing script output as `good.txt` and `bad.txt`.
+Place the captures on Google Drive in a folder that notes the name of your group.  Name the files `good.pcap` and `poor.pcap` to help identify the captures.  Make sure to save your results of your testing script output as `good.txt` and `bad.txt`.
 
 We will be pooling different pcaps from the class for the second part of the project.
 
@@ -78,7 +80,7 @@ We will be pooling different pcaps from the class for the second part of the pro
    * Note that each member of the group should have at least one substantial commit.
    * The `README.md` file should also contain the virtual environment packages that are required.
 * Create an `info.md` file in the `capture` sub-directory that contains information about the captures (where, when)
-   * Include in the `capture` directory the output of your automation scripts as noted above
+   * **CHANGE:** Use the Google Drive link to place your pcaps.  Your repository should contain information about the captures but the captures should be in Google Drive.
 * Push your code to Github and submit the full hash of your submission via Canvas. Note that only one member needs to submit the hash.
 
 ## Rubric
