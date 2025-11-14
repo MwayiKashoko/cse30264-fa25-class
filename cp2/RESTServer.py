@@ -14,8 +14,38 @@ for f in files:
     with open(f, "r") as fp:
         records.extend(json.load(fp))
 
-print(records)
-
-@app.route("/")
+@app.route("/data")
 def getData():
-    pass
+    month = request.args.get("m", type=int)
+    day = request.args.get("d", type=int)
+    year = request.args.get("y", type=int)
+    dr = request.args.get("dir")
+    iface = request.args.get("if")
+
+    output = []
+
+    for r in records:
+        if r.get("type") != "iperf":
+            continue
+
+        timestamp = r.get("timestamp")
+
+        try:
+            time = datetime.fromisoformat(timestamp)
+        except:
+            continue
+
+        if month and time.month != month:
+            continue
+        if day and time.day != day:
+            continue
+        if year and time.year != year:
+            continue
+        if dr and r.get("direction") != dr:
+            continue
+        if iface and r.get("interface") != iface:
+            continue
+
+        output.append(r)
+
+    return jsonify(output)
