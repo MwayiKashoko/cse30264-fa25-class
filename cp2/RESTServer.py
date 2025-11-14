@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import json
 from datetime import datetime
+from collections import defaultdict
 
 portNumber = 5000
 files = ["data/set1/data-10.json"]
@@ -49,3 +50,78 @@ def getData():
         output.append(r)
 
     return jsonify(output)
+
+@app.route("/dl/stat/mean")
+def mean():
+    month = request.args.get("month", type=int)
+    day   = request.args.get("day", type=int)
+    year  = request.args.get("year", type=int)
+    iface = request.args.get("if")
+
+    dailyValues = defaultdict(list)
+
+    for r in records:
+        if r.get("type") != "iperf":
+            continue
+        if r.get("direction") != "downlink":
+            continue
+        if iface and r.get("interface") != iface:
+            continue
+
+        ts = r.get("timestamp")
+        try:
+            t = datetime.fromisoformat(ts)
+        except:
+            continue
+
+        if month and t.month != month:
+            continue
+        if day and t.day != day:
+            continue
+        if year and t.year != year:
+            continue
+
+        key = t.date()
+        dailyValues[key].append(r.get("tput_mbps", 0))
+
+
+    result = {str(day): sum(vals)/len(vals) for day, vals in dailyValues.items() if vals}
+
+    return jsonify(result)
+
+@app.route("/dl/stat/peak")
+def peak():
+    month = request.args.get("month", type=int)
+    day   = request.args.get("day", type=int)
+    year  = request.args.get("year", type=int)
+    iface = request.args.get("if")
+
+    dailyValues = defaultdict(list)
+
+    for r in records:
+        if r.get("type") != "iperf":
+            continue
+        if r.get("direction") != "downlink":
+            continue
+        if iface and r.get("interface") != iface:
+            continue
+
+        ts = r.get("timestamp")
+        try:
+            t = datetime.fromisoformat(ts)
+        except:
+            continue
+
+        if month and t.month != month:
+            continue
+        if day and t.day != day:
+            continue
+        if year and t.year != year:
+            continue
+
+        key = t.date()
+        dailyValues[key].append(r.get("tput_mbps", 0))
+
+    result = {str(day): max(vals) for day, vals in dailyValues.items() if vals}
+
+    return jsonify(result)
