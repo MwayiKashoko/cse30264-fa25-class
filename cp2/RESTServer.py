@@ -4,7 +4,10 @@ from datetime import datetime
 from collections import defaultdict
 
 portNumber = 5000
-files = ["data/set1/data-10.json"]
+#files = ["data/set1/data-10.json"]
+files = [
+    "data/set1/data-all.json",
+]
 
 app = Flask(__name__)
 
@@ -125,3 +128,6 @@ def peak():
     result = {str(day): max(vals) for day, vals in dailyValues.items() if vals}
 
     return jsonify(result)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=portNumber, debug=True)

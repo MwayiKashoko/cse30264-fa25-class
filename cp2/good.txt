@@ -1,0 +1,20 @@
+Endpoint: data
+Min:    0.0527 s
+Max:    0.0609 s
+Mean:   0.0556 s
+Median: 0.0559 s
+Stddev: 0.0021 s
+
+Endpoint: mean
+Min:    0.0033 s
+Max:    0.0043 s
+Mean:   0.0036 s
+Median: 0.0036 s
+Stddev: 0.0003 s
+
+Endpoint: peak
+Min:    0.0032 s
+Max:    0.0037 s
+Mean:   0.0034 s
+Median: 0.0034 s
+Stddev: 0.0002 s
