@@ -131,3 +131,4 @@ def peak():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=portNumber, debug=True)
+    #app.run(host="10.24.99.191", port=portNumber, debug=True)

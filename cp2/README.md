@@ -1,20 +1,14 @@
-#getData
-Min:    0.0776 s
-Max:    0.0843 s
-Mean:   0.0793 s
-Median: 0.0787 s
-Stddev: 0.0017 s
+how to run Flask Server and RESTServer.py
 
-#mean
-Min:    0.0072 s
-Max:    0.0083 s
-Mean:   0.0076 s
-Median: 0.0077 s
-Stddev: 0.0003 s
+flask --app RESTServer.py run
 
-#peak
-Min:    0.0072 s
-Max:    0.0080 s
-Mean:   0.0075 s
-Median: 0.0074 s
-Stddev: 0.0002 s
+It's run on port: 5000
+And add the parameters like stated in the assignment to see the json
+
+how to run requestsTest.py
+
+python3 requestsTest.py
+
+I am the only person in my group so I did everything
+
+Not exactly sure why good.txt and bad.txt results are so similar

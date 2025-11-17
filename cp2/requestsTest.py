@@ -3,6 +3,8 @@ import time
 import statistics
 
 url = "http://127.0.0.1:5000"
+#Replace with your IP this is mine
+#url = "http://10.24.99.191:5000"
 
 urls = {
     "data": "/data",
