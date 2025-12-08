@@ -11,4 +11,4 @@ My bad capture from part one has mean and max of 0 because I made a mistake and 
 
 No non-functional capture because of no extreme retransmissions.
 
-4. Latency Comparison: CSE Student Machine vs. Cloud
+4. CSE machine has lower latency because it connected directly to the campus while the cloud is on a server
