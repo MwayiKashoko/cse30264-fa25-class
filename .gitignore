@@ -1,0 +1,8 @@
+# macOS specific files
+.DS_Store
+.localized
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.pcap

@@ -1,0 +1,14 @@
+Step 3:
+
+1. Yes, the good captures can have a few TCP retransmissions. They reflect normal TCP behavior rather than a performance problem.
+
+2. Worst Host/AP combination: b4:0c:25:e0:80:01 / 98:59:7a:fc:75:ce (mean retransmissions 0.42, max 4)
+
+Higher mean and maximum retransmissions indicate more frequent packet loss or interference.
+My bad capture from part one has mean and max of 0 because I made a mistake and used localhost.
+
+3. *Non-Functional Captures
+
+No non-functional capture because of no extreme retransmissions.
+
+4. Latency Comparison: CSE Student Machine vs. Cloud

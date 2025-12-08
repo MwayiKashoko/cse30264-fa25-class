@@ -1,0 +1,87 @@
+Found 10 .pcap files to analyze
+
+================================================================================
+
+Processing: bad (1).pcap
+  Total packets: 117943
+  Host MAC: b4:0c:25:e0:80:01
+  AP MAC: 74:3a:f4:58:09:67
+  TCP Retransmissions - Min: 0, Max: 2, Mean: 0.40, Median: 0.00
+
+Processing: bad.pcap
+  Total packets: 8334
+  Host MAC: unknown
+  AP MAC: unknown
+  TCP Retransmissions - Min: 0, Max: 0, Mean: 0.00, Median: 0.00
+
+Processing: good (1).pcap
+  Total packets: 30291
+  Host MAC: b4:0c:25:e0:80:01
+  AP MAC: 98:59:7a:fc:75:ce
+  TCP Retransmissions - Min: 0, Max: 1, Mean: 0.16, Median: 0.00
+
+Processing: good (2).pcap
+  Total packets: 90438
+  Host MAC: d0:88:0c:70:a3:33
+  AP MAC: b4:0c:25:e0:80:01
+  TCP Retransmissions - Min: 0, Max: 2, Mean: 0.22, Median: 0.00
+
+Processing: good (3).pcap
+  Total packets: 9446
+  Host MAC: unknown
+  AP MAC: unknown
+  TCP Retransmissions - Min: 0, Max: 0, Mean: 0.00, Median: 0.00
+
+Processing: good (4).pcap
+  Total packets: 116918
+  Host MAC: b4:0c:25:e0:80:01
+  AP MAC: 74:3a:f4:58:09:67
+  TCP Retransmissions - Min: 0, Max: 2, Mean: 0.33, Median: 0.00
+
+Processing: good.pcap
+  Total packets: 9052
+  Host MAC: unknown
+  AP MAC: unknown
+  TCP Retransmissions - Min: 0, Max: 0, Mean: 0.00, Median: 0.00
+
+Processing: poor (1).pcap
+  Total packets: 92184
+  Host MAC: d0:88:0c:70:a3:33
+  AP MAC: b4:0c:25:e0:80:01
+  TCP Retransmissions - Min: 0, Max: 2, Mean: 0.33, Median: 0.00
+
+Processing: poor (2).pcap
+  Total packets: 9355
+  Host MAC: unknown
+  AP MAC: unknown
+  TCP Retransmissions - Min: 0, Max: 0, Mean: 0.00, Median: 0.00
+
+Processing: poor.pcap
+  Total packets: 39603
+  Host MAC: b4:0c:25:e0:80:01
+  AP MAC: 98:59:7a:fc:75:ce
+  TCP Retransmissions - Min: 0, Max: 4, Mean: 0.68, Median: 0.00
+
+================================================================================
+
+SUMMARY STATISTICS
+================================================================================
+
+Tests per Host/AP Combination:
+--------------------------------------------------------------------------------
+  Host: unknown, AP: unknown - 4 tests
+  Host: b4:0c:25:e0:80:01, AP: 74:3a:f4:58:09:67 - 2 tests
+  Host: b4:0c:25:e0:80:01, AP: 98:59:7a:fc:75:ce - 2 tests
+  Host: d0:88:0c:70:a3:33, AP: b4:0c:25:e0:80:01 - 2 tests
+
+
+Performance Analysis (sorted by mean retransmissions):
+--------------------------------------------------------------------------------
+Host MAC             AP MAC               Tests    Min    Max    Mean     Median  
+--------------------------------------------------------------------------------
+b4:0c:25:e0:80:01    98:59:7a:fc:75:ce    2        0      4      0.42     0.00    
+b4:0c:25:e0:80:01    74:3a:f4:58:09:67    2        0      2      0.37     0.00    
+d0:88:0c:70:a3:33    b4:0c:25:e0:80:01    2        0      2      0.28     0.00    
+unknown              unknown              4        0      0      0.00     0.00    
+
+================================================================================

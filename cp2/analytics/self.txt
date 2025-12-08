@@ -1,0 +1,33 @@
+Found 2 .pcap files to analyze
+
+================================================================================
+
+Processing: bad.pcap
+  Total packets: 8334
+  Host MAC: unknown
+  AP MAC: unknown
+  TCP Retransmissions - Min: 0, Max: 0, Mean: 0.00, Median: 0.00
+
+Processing: good.pcap
+  Total packets: 9052
+  Host MAC: unknown
+  AP MAC: unknown
+  TCP Retransmissions - Min: 0, Max: 0, Mean: 0.00, Median: 0.00
+
+================================================================================
+
+SUMMARY STATISTICS
+================================================================================
+
+Tests per Host/AP Combination:
+--------------------------------------------------------------------------------
+  Host: unknown, AP: unknown - 2 tests
+
+
+Performance Analysis (sorted by mean retransmissions):
+--------------------------------------------------------------------------------
+Host MAC             AP MAC               Tests    Min    Max    Mean     Median  
+--------------------------------------------------------------------------------
+unknown              unknown              2        0      0      0.00     0.00    
+
+================================================================================
